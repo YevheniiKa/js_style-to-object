@@ -7,7 +7,12 @@
  */
 function convertToObject(sourceString) {
   const object = {};
-  const styles = sourceString.split(';').filter(item => typeof item === 'string' ? item.trim() !== "" : true); // made array with elements, and filter empty elements 
+
+  // made array with elements, and filter empty elements
+  const styles = sourceString
+    .split(';')
+    .filter((item) => (typeof item === 'string' ? item.trim() !== '' : true));
+
   // made a loop for for elements of array(styles)
   for (const element of styles) {
     const styleValue = element.split(':');
